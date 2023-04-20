@@ -1,10 +1,10 @@
-import { PropsWithChildren } from 'react';
 import { Sidebar } from '@components/layout';
+import { PropsWithChildren } from 'react';
 
-export default function Home(): JSX.Element {
+export default function Layout({ children }: PropsWithChildren) {
   return (
     <>
-      <main className="mx-auto p-10">Hello World</main>
+      <main className="mx-auto p-10">{children}</main>
       <Sidebar>
         <h2>Ricardo Otero</h2>
 

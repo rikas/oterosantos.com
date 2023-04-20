@@ -1,12 +1,13 @@
-import { PropsWithChildren } from 'react';
+import { Subtitle } from '@components/atoms';
 import { Sidebar } from '@components/layout';
+import { PropsWithChildren } from 'react';
 
-export default function Home(): JSX.Element {
+export default function Layout({ children }: PropsWithChildren) {
   return (
     <>
-      <main className="mx-auto p-10">Hello World</main>
+      <main className="mx-auto p-10">{children}</main>
       <Sidebar>
-        <h2>Ricardo Otero</h2>
+        <Subtitle>Quick bio</Subtitle>
 
         <p>
           Freelance web developer, working with Ruby and Ruby on Rails for 10+ years and fluent in
