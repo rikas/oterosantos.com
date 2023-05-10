@@ -4,6 +4,7 @@ import { PropsWithChildren } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { GithubIcon, LinkedinIcon, TwitterIcon } from '@components/icons';
+import { ExternalLink } from '@components/atoms';
 
 type LinkProps = PropsWithChildren<{
   href: string;
@@ -17,9 +18,9 @@ function LogoLink({ href, className, children }: LinkProps): JSX.Element {
   );
 
   return (
-    <a href={href} className={twClasses} target="_blank" rel="noreferrer noopener">
+    <ExternalLink href={href} className={twClasses}>
       {children}
-    </a>
+    </ExternalLink>
   );
 }
 
