@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { PropsWithChildren } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 export const LinkStyles = {
   base: 'text-sky-600 hover:text-sky-400 dark:text-sky-400 hover:dark:text-sky-600',
@@ -20,8 +21,10 @@ export const StyledLink = ({
   children,
   ...otherProps
 }: StyledLinkProps): JSX.Element => {
+  const twClasses = twMerge(LinkStyles[variant], className);
+
   return (
-    <Link href={href} className={`${className} ${LinkStyles[variant]}`} {...otherProps}>
+    <Link href={href} className={twClasses} {...otherProps}>
       {children}
     </Link>
   );

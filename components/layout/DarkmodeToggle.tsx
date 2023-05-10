@@ -21,6 +21,7 @@ const DarkmodeToggle = (): JSX.Element => {
     <>
       {!hasMounted && (
         <button
+          type="button"
           className={LinkStyles['nav']}
           aria-label="Activate light mode"
           title="Activate light mode"
@@ -30,6 +31,7 @@ const DarkmodeToggle = (): JSX.Element => {
       )}
       {hasMounted && (
         <button
+          type="button"
           className={LinkStyles['nav']}
           aria-label={description}
           title={description}

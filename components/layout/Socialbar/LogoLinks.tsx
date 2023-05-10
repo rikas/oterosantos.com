@@ -1,7 +1,9 @@
 // SVG icons were copied from here: https://simpleicons.org/
 
-import { GithubIcon, LinkedinIcon, TwitterIcon } from '@components/icons';
 import { PropsWithChildren } from 'react';
+import { twMerge } from 'tailwind-merge';
+
+import { GithubIcon, LinkedinIcon, TwitterIcon } from '@components/icons';
 
 type LinkProps = PropsWithChildren<{
   href: string;
@@ -9,13 +11,13 @@ type LinkProps = PropsWithChildren<{
   React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 function LogoLink({ href, className, children }: LinkProps): JSX.Element {
+  const twClasses = twMerge(
+    'hover:opacity-80 hover:bg-white rounded-full hover:bg-opacity-70 dark:hover:bg-black/20 w-10 p-2',
+    className,
+  );
+
   return (
-    <a
-      href={href}
-      className={`hover:opacity-80 hover:bg-white rounded-full hover:bg-opacity-70 dark:hover:bg-black/20 w-10 p-2 ${className}`}
-      target="_blank"
-      rel="noreferrer noopener"
-    >
+    <a href={href} className={twClasses} target="_blank" rel="noreferrer noopener">
       {children}
     </a>
   );
