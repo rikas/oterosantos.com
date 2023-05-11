@@ -1,5 +1,6 @@
 import { ExternalLink, Stack } from '@components/atoms';
-import { ArrowRightIcon, StarIcon } from '@heroicons/react/24/solid';
+import AnimatedArrowLinkText from '@components/atoms/AnimatedArrowLinkText';
+import { StarIcon } from '@heroicons/react/24/solid';
 
 export interface Repository {
   id: number;
@@ -40,10 +41,8 @@ export function TopGitHubProjects({ repos, profileURL, repoCount }: Props) {
         </li>
       ))}
       <li className="mt-2">
-        <ExternalLink href={profileURL} className="text-sm" variant="gray">
-          <Stack direction="row" gap={1} className="items-end">
-            See all {repoCount} repositories <ArrowRightIcon className="w-4 h-4" />
-          </Stack>
+        <ExternalLink href={profileURL} className="text-sm inline-flex" variant="gray">
+          <AnimatedArrowLinkText text={`See all ${repoCount} repositories`} />
         </ExternalLink>
       </li>
     </ol>

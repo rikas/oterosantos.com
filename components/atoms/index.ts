@@ -4,3 +4,4 @@ export * from './StyledLink';
 export * from './Stack';
 export * from './Subtitle';
 export * from './Divider';
+export * from './AnimatedArrowLinkText';
